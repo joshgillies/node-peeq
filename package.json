@@ -1,0 +1,36 @@
+{
+  "name": "peeq",
+  "version": "1.0.0",
+  "description": "Continuously retrieve web resources based on Last-Modified header",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "keywords": [
+    "peek",
+    "ping",
+    "check",
+    "checker",
+    "request",
+    "response",
+    "last-modified",
+    "last modified",
+    "last",
+    "modified"
+  ],
+  "author": "Josh Gillies <npm@joshgilli.es> (http://joshgilli.es/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshgillies/node-peeq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshgillies/node-peeq/issues"
+  },
+  "homepage": "https://github.com/joshgillies/node-peeq",
+  "dependencies": {
+    "curli": "^0.4.0",
+    "inherits": "^2.0.1",
+    "knoq": "^1.0.0"
+  }
+}
