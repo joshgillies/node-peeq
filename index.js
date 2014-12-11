@@ -11,12 +11,8 @@ var Peeq = function Peeq(uri, opts, callback) {
 inherits(Peeq, Knoq);
 
 Peeq.prototype.preRequest = function preRequest() {
-  if (!this.ready()) return;
-
   var checkLastModified = function checkLastModified(err, headers) {
     if (err) return this.emit('error', err);
-
-    this.pending = false;
 
     if (!headers['last-modified']) {
       this.emit('error', new Error('\'last-modified\' header not available.'));
@@ -24,15 +20,18 @@ Peeq.prototype.preRequest = function preRequest() {
 
     var modified = new Date(headers['last-modified']);
 
+    this.pending = false;
+
     if (this.lastModified < modified) {
       this.lastModified = modified;
       this.request();
     }
   };
 
-  this.pending = true;
-
-  curli(this.uri, checkLastModified.bind(this));
+  if (this.ready()) {
+    this.pending = true;
+    curli(this.uri, checkLastModified.bind(this));
+  }
 };
 
 module.exports = Peeq;

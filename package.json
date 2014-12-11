@@ -29,8 +29,13 @@
   },
   "homepage": "https://github.com/joshgillies/node-peeq",
   "dependencies": {
-    "curli": "^0.4.0",
+    "curli": "^0.5.0",
     "inherits": "^2.0.1",
     "knoq": "^1.0.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.10",
+    "precommit-hook": "^1.0.7",
+    "tape": "^3.0.3"
   }
 }
