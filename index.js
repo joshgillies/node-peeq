@@ -15,7 +15,7 @@ Peeq.prototype.preRequest = function preRequest() {
     if (err) return this.emit('error', err);
 
     if (!headers['last-modified']) {
-      this.emit('error', new Error('\'last-modified\' header not available.'));
+      this.emit('error', new Error('\'last-modified\' header not available in ' + JSON.stringify(headers)));
     }
 
     var modified = new Date(headers['last-modified']);
