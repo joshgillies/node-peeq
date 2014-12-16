@@ -6,6 +6,10 @@ Peeq is based on [Knoq](https://github.com/joshgillies/node-knoq)
 and exposes an almost identical API as a result, with the exception
 that it will only return a "response" event if the resource has been updated.
 
+[![build status](https://secure.travis-ci.org/joshgillies/node-peeq.svg)](http://travis-ci.org/joshgillies/node-peeq)
+
+[![NPM](https://nodei.co/npm/peeq.png?downloads=true&stars=true)](https://nodei.co/npm/peeq/)
+
 # Example
 
 ```javascript
