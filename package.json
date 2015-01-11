@@ -1,6 +1,6 @@
 {
   "name": "peeq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Continuously retrieve web resources based on Last-Modified header",
   "main": "index.js",
   "scripts": {
