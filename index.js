@@ -12,7 +12,11 @@ inherits(Peeq, Knoq);
 
 Peeq.prototype.preRequest = function preRequest() {
   var checkLastModified = function checkLastModified(err, headers) {
-    if (err) return this.emit('error', err);
+    if (err) {
+      this.emit('error', err);
+      this.end();
+      return;
+    }
 
     if (!headers['last-modified']) {
       this.emit('error', new Error('\'last-modified\' header not available in ' + JSON.stringify(headers)));
